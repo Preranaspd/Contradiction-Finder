@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contradiction Finder AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Contradiction Finder</h1>
+        <p class="subtitle">Enter a topic to generate opposing viewpoints, identify contradictions, and switch perspectives.</p>
+        
+        <form id="analyzeForm">
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <textarea id="topic" rows="4" placeholder="e.g., AI replacing jobs, Climate change policies, Universal basic income..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="perspective">Perspective:</label>
+                <select id="perspective">
+                    <option value="base">Base Analysis (Default Viewpoints)</option>
+                    <option value="general">General/Public Opinion</option>
+                    <option value="scientific">Scientific/Evidence-Based</option>
+                    <option value="economic">Economic/Cost-Benefit</option>
+                    <option value="ethical">Ethical/Moral</option>
+                </select>
+            </div>
+            
+            <button type="submit">🔍 Analyze Contradictions</button>
+        </form>
+        
+        <div id="loading" class="loading" style="display: none;">
+            Analyzing... Please wait.
+        </div>
+        
+        <div id="results" style="display: none;"></div>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
